@@ -1,0 +1,43 @@
+Package: ADvizR
+Title: Abnormal Diffusion visualizeR for brain images
+Version: 0.0.0.9000
+Authors@R: c(
+    person("Jonathan", "Horsley", , "jonathan.horsley@newcastle.ac.uk", role = c("aut", "cre")),
+    person("Gabrielle", "Schroeder", , "rseteam@newcastle.ac.uk", role = c("ctb"),
+           comment = c(ORCID = "0000-0003-2278-5227"))
+    )
+Description: Computes and visualizes voxel-level brain abnormalities from
+    diffusion-weighted MRI. Determines abnormalities by comparing patient
+    diffusion data to a normative map of brain diffusion.
+License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
+    license
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Imports:
+    dplyr (>= 1.1.4),
+    stringr (>= 1.5.1),
+    readr (>= 2.1.5),
+    oro.nifti (>= 0.11.4),
+    methods (>= 4.4.1),
+    pTFCE (>= 0.2.2.1),
+    rlang (>= 1.1.4),
+    mmand (>= 1.6.3),
+    stats (>= 4.4.1),
+    mcp (>= 0.3.4),
+    httr (>= 1.4.7),
+    jsonlite (>= 1.8.9)
+Remotes:
+    spisakt/pTFCE@v0.2.2.1
+Depends:
+    R (>= 4.4.0)
+Config/renv/profiles/dev/dependencies:
+    devtools,
+    testthat (>= 3.0.0),
+    styler,
+    lintr,
+    covr,
+    DT
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
