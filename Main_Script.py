@@ -4,6 +4,7 @@ import argparse
 import pandas as pd
 import shutil
 
+import Stage_0_DWI
 import Stage_1_DWI
 import Stage_2_DWI
 import Stage_3_DWI
@@ -22,6 +23,7 @@ parser.add_argument("-bvec","--bvec_File", help="File Pathway to bvec file (Bvec
 parser.add_argument("-bval","--bval_File", help="File Pathway to bval file (Bval: \".bval\")")
 parser.add_argument("-o","--Output_Folder_Location", help="Location Pathway for Output Folder (Output)")
 parser.add_argument("-ID","--Identifier", help="File Pathway to Identifier file (ID example: \"1043\")")
+parser.add_argument("--NODDI_1p6", action="store_true", default=False, help="Use this flag for the new NODDI 1.6mm acquisition")
 args = vars(parser.parse_args())
 
 DWI_Image = args['DWI_Image']
@@ -52,6 +54,12 @@ os.makedirs(os.path.join(Output_Folder, Identifier), exist_ok=True)
 T1_BRAIN_PATH,WM_MASK_PATH = T1_Processing.T1_Processing(T1_Image, Identifier, Output_Folder)
 
 ##ACQP Settings
+
+
+##Resample NODDI 1.6mm down for processing speeds
+if args['NODDI_1p6']:
+    print("Using NODDI 1.6mm acquisition settings")
+    DWI_Image = Stage_0_DWI.NODDI_Resample(DWI_Image, Identifier, Output_Folder)
 
 ## ------ Stage 1
 Denoise_DWI_OUT = Stage_1_DWI.Denoise(DWI_Image, Identifier, Output_Folder)
