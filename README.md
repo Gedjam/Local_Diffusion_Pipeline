@@ -22,6 +22,8 @@ Designed to find abnormalities from diffusion weighted MRI scans
 
 - The output path is a folder that already has to exist! A new folder will be created from the *ID* name inside the output folder.
 
-- The output abnormality files are located in *"Abnormality_Maps/abnormalities_final.nii.gz"* and *"Abnormality_Maps/abnormality_clusters_binarised.nii.gz"*
+- The output abnormality files are located in *"Abnormality_Maps/abnormalities_final.nii.gz"* and *"Abnormality_Maps/abnormality_clusters_binarised.nii.gz"*. Open these in an image viewer (e.g. fsleyes, ITKsnap, etc) and view the output!  
   - *"Abnormality_Maps/abnormalities_final.nii.gz"* is the full brain image with the adjusted z-scores measuring abnormalities
-  - *"Abnormality_Maps/abnormality_clusters_binarised.nii.gz"* is an image containing the abnormality masks, each one labelled an interger (e.g. 1, 2, 3, ...). Each number sequentially represents the most abnormal cluster being number: 1, second most abnormal cluster being number: 2, to the least abnormal cluster (highest number).       
+  - *"Abnormality_Maps/abnormality_clusters_binarised.nii.gz"* is an image containing the abnormality masks, each one labelled an interger (e.g. 1, 2, 3, ...). Each number sequentially represents the most abnormal cluster being number: 1, second most abnormal cluster being number: 2, to the least abnormal cluster (highest number).
+
+    
